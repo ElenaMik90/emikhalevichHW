@@ -1,3 +1,5 @@
+package HW3;
+
 public class AnswerOptionsForHW3 {
      String[] textAnswer;
      int result;

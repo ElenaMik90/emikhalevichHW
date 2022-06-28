@@ -1,3 +1,5 @@
+package HW3;
+
 public class QuestionsForHW3 {
 
     private String textQuestion;
