@@ -5,7 +5,7 @@ import java.util.stream.Collectors;
 
 public class homework5 {
 
-    public static void main(String[] arg){
+    public static void main(String[] arg) {
 
     }
 }
