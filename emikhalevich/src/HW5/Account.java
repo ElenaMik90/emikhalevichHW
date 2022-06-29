@@ -1,6 +1,14 @@
 package HW5;
-import java.util.*;
+
+import java.util.ArrayList;
+
 public class Account {
-    Client clients;
+    String clients;
     String bankAccount;
+    ArrayList<Account> accountArrayList;
+
+/*    public String getClients(String clients) {
+        this.clients =clients;
+        return clients;
+    }*/
 }
