@@ -4,12 +4,12 @@ import java.util.*;
 
 public class Client {
     private String lastName;
-    private int id;
+    private int age;
     Account [] account;
     ArrayList<Client> clientArrayList;
 
-    public int setId(int id) {
-        this.id = id;
+    public int setAge(int id) {
+        this.age = id;
         return id;
     }
 
@@ -18,8 +18,8 @@ public class Client {
         return lastName;
     }
 
-    public int getId() {
-        return id;
+    public int getAge() {
+        return age;
     }
     public String getLastName() {
         return lastName;
