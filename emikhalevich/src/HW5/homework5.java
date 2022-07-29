@@ -13,6 +13,12 @@ public class homework5 {
 //    }
 
     public static void main(String[] args) {
+        HashMap <String, Integer> ListClients = new HashMap<>();
+        ListClients.put ("Иванов", 35);
+        ListClients.put ("Федоров", 20);
+        ListClients.put ("Сидоров", 55);
+//        System.out.println(ListClients);
+
         Client client1 = new Client();
         Client client2 = new Client();
         Client client3 = new Client();
@@ -29,22 +35,22 @@ public class homework5 {
         clients.add(client3);
 
         Account account1 = new Account();
-        account1.clients = client1.getLastName(); //расхардкодить?
+        account1.client = client1;
         account1.id = ("Счёт 001");
         Account account2 = new Account();
-        account2.clients = client1.getLastName();
+        account2.client = client1;
         account2.id = ("Счёт 006");
         Account account3 = new Account();
-        account3.clients = client1.getLastName();
+        account3.client= client1;
         account3.id = ("Счёт 004");
         Account account4 = new Account();
-        account4.clients = client2.getLastName();
+        account4.client = client2;
         account4.id = ("Счёт 002");
         Account account5 = new Account();
-        account5.clients = client2.getLastName();
+        account5.client = client2;
         account5.id = ("Счёт 005");
         Account account6 = new Account();
-        account6.clients = client3.getLastName();
+        account6.client = client3;
         account6.id = ("Счёт 003");
 
 
@@ -52,28 +58,46 @@ public class homework5 {
         accounts.add(account1);
         accounts.add(account2);
         accounts.add(account3);
-        accounts.add(account4);
-        accounts.add(account5);
-        accounts.add(account6);
+//        accounts.add(account4);
+//        accounts.add(account5);
+//        accounts.add(account6);
 
 //        Collections.sort(accounts); // сортировка объектов?
 
         int k = accounts.size() - 1;
-        Scanner scanClient = new Scanner(System.in);
-        String accountScan = scanClient.next();
+/*        Scanner scanClient = new Scanner(System.in);
+        String accountScan = scanClient.next();*/
+        int age = 35;
+        String lastName = "Иванов";
+        Client currentClient = new Client();
+        currentClient.setLastName(lastName);
+        currentClient.setAge(age);
+//
+        ArrayList<Account> currentAccount = new ArrayList<>();
+        //ввести имя
+        //создать объект клиент
         for (int i = 0; i <= k; i++) {
-            if (accounts.get(i).clients.equals(accountScan)) {
-                System.out.println(accounts.get(i).clients + "\t" + accounts.get(i).id);
+//            if (accounts.get(i).client.getLastName().equals(accountScan)) {
+            if (accounts.get(i).client.equals(currentAccount)) {
+                System.out.println(accounts.get(i).client.getLastName() + "\t" + accounts.get(i).id);
+                currentAccount.add(accounts.get(i));
             }
         }
 
-        Scanner scanAccount = new Scanner(System.in);
-        String clientScan = scanAccount.next();
+/*        Scanner scanAccount = new Scanner(System.in);
+        String clientScan = scanAccount.next();*/
+        Account currentAcc = new Account();
+        currentAcc.id = "Счёт 004";
+        //клиент как объект
+        //функции
+        //equals HashCode + HashMap
+//        HashMap<Client, ArrayList<Account>>
         for (int j = 0; j <= k; j++) {
-            if (accounts.get(j).id.equals(clientScan)) {
-                System.out.println(accounts.get(j).clients);
+            if (accounts.get(j).equals(currentAcc)) {
+                System.out.println(accounts.get(j).client.getLastName());
 
             }
+            System.out.println(accounts.get(j).id);
         }
     }
 }

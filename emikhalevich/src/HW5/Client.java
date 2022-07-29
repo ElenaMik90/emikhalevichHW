@@ -5,6 +5,7 @@ import java.util.*;
 public class Client {
     private String lastName;
     private int age;
+
     Account [] account;
     ArrayList<Client> clientArrayList;
 
@@ -26,9 +27,9 @@ public class Client {
     }
 
     //переопределила коробочный метод
-/*    public boolean equals(Object obj) {
-        Client client2 = (Client) obj;
-        return this.lastName == client2.lastName & this.id == client2.id;
-    }*/
+//    public boolean equals(Object obj) {
+//        Client client2 = (Client) obj;
+//        return this.lastName == client2.lastName & this.age == client2.age;
+//    }
 }
 
