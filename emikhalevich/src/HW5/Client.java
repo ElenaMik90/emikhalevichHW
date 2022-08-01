@@ -6,30 +6,42 @@ public class Client {
     private String lastName;
     private int age;
 
-    Account [] account;
-    ArrayList<Client> clientArrayList;
+/*    public Client(String lastName, Integer age) {
+        this.lastName = lastName;
+        this.age = age;
+    }*/
 
-    public int setAge(int id) {
-        this.age = id;
-        return id;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public String setLastName(String lastName) {
-        this.lastName = lastName;
-        return lastName;
+    public void setAge(int age) {
+        this.age = age;
     }
 
     public int getAge() {
         return age;
     }
+
     public String getLastName() {
         return lastName;
     }
 
-    //переопределила коробочный метод
-//    public boolean equals(Object obj) {
-//        Client client2 = (Client) obj;
-//        return this.lastName == client2.lastName & this.age == client2.age;
-//    }
+    //  вывод/описания действия
+   public String toString() {
+        return "Клиент " + lastName;
+    }
+
+    //TODO переопределить коробочный метод equals
+    public boolean equals(Object obj) {
+        Client clientEquals= (Client) obj;
+        return Objects.equals(this.lastName, clientEquals.lastName);
+    }
+
 }
+
+
+
+
+
 
