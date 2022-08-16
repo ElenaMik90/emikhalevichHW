@@ -41,7 +41,7 @@ public class homework6 {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println("----------------------" + "\n" + "try-with-resources GONE");
+        System.out.println("-----------------------" + "\n" + "try-with-resources GONE");
 
     }
 }
