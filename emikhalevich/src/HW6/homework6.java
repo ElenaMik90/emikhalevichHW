@@ -1,7 +1,8 @@
 package HW6;
 
+import java.io.*;
 import java.util.ArrayList;
-import java.util.Scanner;
+
 
 public class homework6 {
 
@@ -25,6 +26,22 @@ public class homework6 {
         } finally {
             System.out.println("Благодарим за использование нашей платфомы");
         }
+
+
+        String src = "src/HW6/File/log.txt";
+        String dest = "src/HW6/File/copy.txt";
+
+        try (FileInputStream input = new FileInputStream(src);
+
+             FileOutputStream output = new FileOutputStream(dest)) {
+            byte[] buffer = input.readAllBytes();
+            output.write(buffer);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println("----------------------" + "\n" + "try-with-resources GONE");
 
     }
 }
