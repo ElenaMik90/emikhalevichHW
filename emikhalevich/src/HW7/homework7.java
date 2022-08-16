@@ -1,7 +1,7 @@
 package HW7;
 
 
-public class HomeWork {
+public class homework7 {
 
     /*
         Заготовка для ДЗ представляет собой игру в кости.
