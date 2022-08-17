@@ -1,0 +1,174 @@
+<!DOCTYPE>
+<html>
+<head>
+    <title>Домашняя работа</title>
+    <style>
+        h1, h2, h3 {
+            color: green;
+        }
+
+        .students-tab {
+            border: 1px solid steelblue;
+            width: 450px;
+            border-collapse: collapse;
+            margin-bottom: 50px;
+        }
+		.studentsAdd-tab {
+            border: 1px solid red;
+            width: 300px;
+            border-collapse: collapse;
+            margin-bottom: 50px;
+        }
+
+        .students-tab tr td {
+            border: 1px solid steelblue;
+        }
+		.studentsAdd-tab tr td {
+            border: 2px solid red;
+        }
+
+        .students-tab-col1 {
+            width: 350px;
+        }
+		.students-tab-col2 {
+            width: 200px;
+        }
+		.students-tab-col3 {
+            width: 220px;
+        }
+        .students-tab-col4 {
+            width: 150px;
+        }
+        .students-tab-col5 {
+            width: 500px;
+        }
+    </style>
+
+    <script>
+	"use strict"
+        function addStudent() {
+
+            var table = document.getElementById("studentsTab");
+			var studentFIO = document.getElementById("studentFIO").value;
+            var studentDateBirth = document.getElementById("studentDateBirth").value;
+            var studentGender = document.getElementById("studentGender").value;
+			var row = table.insertRow(-1);
+			var cell1 = row.insertCell(0);
+			var cell2 = row.insertCell(1);
+			var cell3 = row.insertCell(2);
+			var cell4 = row.insertCell(3);
+			cell1.innerHTML = studentFIO;
+			cell2.innerHTML = studentGender;
+			cell3.innerHTML = studentDateBirth;
+			cell4.innerHTML = age;
+        }
+
+	</script>
+
+    <script>
+		function getAgeStudent (){
+			var today = new Date();
+			var studentDateBirth = document.getElementById("studentFIO").value;
+			var age = today.getFullYear() - studentDateBirth.getFullYear();
+			var m = today.getMonth() - studentDateBirth.getMonth();
+				if (m < 0 || (m === 0 && today.getDate() < studentDateBirth.getDate()))
+				{
+					age--;
+				}
+			return age;
+		}
+	</script>
+
+</head>
+
+<body>
+    <h2>
+        Домашняя работа
+    </h2>
+    <table class="studentsAdd-tab" id="studentsTabAdd">
+        <thead>
+            <tr>
+        <td>
+			<div class = "input-form">
+				<label for = "studentFIO">ФИО</label>
+					<input id = "studentFIO" type = "text" value = "">
+				</br></br><label for = "studentDateBirth">Дата рождения</label>
+					<input id = "studentDateBirth" name = "DateBirth" type = "date" value = "2004-01-01">
+				</br></br><label for = "studentGender">Пол</label>
+					<input id = "studentGender" type = "text" value = "">
+
+				<!-- не получилось js работать, есть задан список значений для выбора пола-->
+				<!-- </br></br><label>studentGender<label>			 -->
+					<!-- <select name = "studentGender"> -->
+						<!-- <option value = "1" selected>Мужчина</option> -->
+						<!-- <option value = "2">Женщина</option> -->
+					<!-- </select> -->
+				<!-- </label>   	 -->
+
+				</br></br><button id="getStudent" onclick = "addStudent()">Добавить</button
+			</div>
+			</td>
+            </tr>
+        </thead>
+
+    </table>
+
+
+
+
+    <h3>Таблица студентов</h3>
+    <table class="students-tab" id="studentsTab">
+        <thead>
+            <tr>
+                <td class="students-tab-col1">Имя студента</td>
+                <td class="students-tab-col2">Пол</td>
+                <td class="students-tab-col3">Дата рождения</td>
+                <td class="students-tab-col4">Возраст</td>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Иванов Иван Игоревич</td>
+                <td>мужчина</td>
+                <td>12.11.2002</td>
+				<td>19</td>
+
+
+            </tr>
+            <tr>
+                <td>Петрова Ольга Иванова</td>
+                <td>женщина</td>
+                <td>10.05.1993</td>
+				<td>29</td>
+
+            </tr>
+            <tr>
+                <td>Смирнов Александр Семёнович</td>
+                <td>мужчина</td>
+                <td>22.09.1982</td>
+				<td>39</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
