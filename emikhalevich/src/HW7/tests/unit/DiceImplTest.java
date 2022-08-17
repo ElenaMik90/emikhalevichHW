@@ -1,7 +1,7 @@
 package HW7.tests.unit;
 
 import HW7.game.DiceImpl;
-
+//тест  pull request:
 public class DiceImplTest {
     public void testDice() {
         String scenario = "ТЕСТ: Выпавшение значение должно быть меньше либо равно 6";
