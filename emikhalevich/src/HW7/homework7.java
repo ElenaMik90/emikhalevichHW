@@ -1,6 +1,8 @@
 package HW7;
 
 
+import HW7.game.*;
+
 public class homework7 {
 
     /*
@@ -14,7 +16,10 @@ public class homework7 {
         Информацию о пройденном тесте предлагается выводить в System.out, а об упавшем в System.err
      */
     public static void main(String[] args) {
-
+        Dice dice = new DiceImpl();
+        GameWinnerPrinter winnerPrinter = new GameWinnerConsolePrinter();
+        Game game = new Game(dice, winnerPrinter);
+        game.playGame(new Player("Вася"), new Player("Игорь"));
     }
-    
 }
+    

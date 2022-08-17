@@ -6,12 +6,16 @@ public class DiceImplTest {
     public void testDice() {
         String scenario = "ТЕСТ: Выпавшение значение должно быть меньше либо равно 6";
         try {
-            int actual = 7;
-            if (actual < 1) {
-                System.out.printf("\"%s\" passed %n", scenario);
+            int max = 6;
+            //   int actual = new Random().nextInt();
+            if (max <= new Random().nextInt()) {
+                System.out.printf("\"%s\" пройдено %n", scenario);
+            } else {
+                throw new Exception("Значение больше 6");
             }
-        } catch (Throwable e) {
-            System.err.printf("\"%s\" fails with message \"%s\" %n", scenario, e.getMessage());
+        } catch (Exception e) {
+
+            System.err.printf("\"%s\" не пройдено  \"%s\" %n", scenario, e.getMessage());
         }
     }
 
