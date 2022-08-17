@@ -1,14 +1,14 @@
 package HW7.tests.unit;
 
-import java.util.Random;
+import HW7.game.DiceImpl;
 
 public class DiceImplTest {
     public void testDice() {
         String scenario = "ТЕСТ: Выпавшение значение должно быть меньше либо равно 6";
         try {
             int max = 6;
-            //   int actual = new Random().nextInt();
-            if (max <= new Random().nextInt()) {
+            DiceImpl actual = new DiceImpl();
+            if (max <= actual.roll()) {
                 System.out.printf("\"%s\" пройдено %n", scenario);
             } else {
                 throw new Exception("Значение больше 6");
