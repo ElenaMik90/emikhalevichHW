@@ -27,7 +27,6 @@ public class homework6 {
             System.out.println("Благодарим за использование нашей платфомы");
         }
 
-
         String src = "src/HW6/File/log.txt";
         String dest = "src/HW6/File/copy.txt";
 
