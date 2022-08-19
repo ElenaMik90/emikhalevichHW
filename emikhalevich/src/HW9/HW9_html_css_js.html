@@ -60,11 +60,11 @@
 			var cell2 = row.insertCell(1);
 			var cell3 = row.insertCell(2);
 			var cell4 = row.insertCell(3);
+			cell4.class= "calcMedianAge";
 			cell1.innerHTML = studentFIO;
 			cell2.innerHTML = studentGender;
 			cell3.innerHTML = studentDateBirth;
-			cell4.innerHTML = getAgeStudent();  // как заставить функцию увидеть результат другой функции??
-
+			cell4.innerHTML = getAgeStudent();
         }
 
          function getAgeStudent (){
@@ -82,26 +82,28 @@
         function setMedianAge (){
             var table = document.getElementById("studentsTab");
             var actualAgeCell = getActualAgeCell(table);
-            var sumMedian = getMedianAge(actualAgeCell);
-            showMedianAge(sumMedian, medianAgeCell);
+            var medianAge = getMedianAge(actualAgeCell);
+            showMedianAge(medianAge, medianAgeCell);
         }
 
         function getActualAgeCell(table){
-            var calcMedianAged =  table.querySelectorAll('td.calcMedianAge');
+            var calcMedianAged = table.querySelectorAll('td.calcMedianAge');
             return calcMedianAged;
             }
 
         function getMedianAge (elms){
             var sum = 0;
-            for (var i = 0; i < elms.length; i++ ){
+            var sumMedian = 10;
+            var length = elms.length;
+            for (var i = 0; i < length; i++ ){
             sum += Number(elms[i].innerHTML);
-            sumMedian = parseInt(sum/elms.length);
+            sumMedian = parseInt(sum/length);
             }
             return sumMedian;
        }
 
-        function showMedianAge (sum, element){
-            element.innerHTML = sum;
+        function showMedianAge (sumMedian, elms){
+            elms.innerHTML = sumMedian;
         }
 
     </script>
@@ -132,7 +134,7 @@
                 <!-- </label>   	 -->
 
                 </br></br>
-                <button id="getStudent" onclick="addStudent(); setMedianAge">Добавить</button>
+                <button id="getStudent" onclick="addStudent(); setMedianAge()">Добавить</button>
             </div>
         </td>
     </tr>
