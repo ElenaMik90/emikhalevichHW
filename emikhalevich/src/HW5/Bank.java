@@ -6,7 +6,6 @@ import java.util.Map;
 
 public class Bank {
     private static String currentFIO = null;
-
     public static String getFIOByAccount(HashMap<Client, HashSet<Account>> ListClient) {
         Account searchAccount = new Account(11000044);
         for (Map.Entry<Client, HashSet<Account>> entry : ListClient.entrySet()){
