@@ -6,38 +6,40 @@ public class Client {
     private String lastName;
     private int age;
 
-/*    public Client(String lastName, Integer age) {
+    public Client(String lastName, int age) {
         this.lastName = lastName;
-        this.age = age;
-    }*/
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public void setAge(int age) {
         this.age = age;
     }
 
-    public int getAge() {
-        return age;
+    public Client() {
     }
 
     public String getLastName() {
         return lastName;
     }
 
-    //  вывод/описания действия
-    public String toString() {
-        return "Клиент " + lastName;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    // переопределить коробочный метод equals
-    public boolean equals(Object obj) {
-        Client clientEquals= (Client) obj;
-        return Objects.equals(this.lastName, clientEquals.lastName);
+    public int getAge() {
+        return age;
     }
 
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        Client client = (Client) o;
+        return age == client.age && Objects.equals(lastName, client.lastName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(lastName);
+    }
 }
 
 

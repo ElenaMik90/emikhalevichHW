@@ -59,7 +59,7 @@
 			cell1.innerHTML = studentFIO;
 			cell2.innerHTML = studentGender;
 			cell3.innerHTML = studentDateBirth;
-			cell4.innerHTML = age;  // как заставить функцию увидеть результат другой функции?
+			cell4.innerHTML = age;  // как заставить функцию увидеть результат другой функции??
         }
 	</script>
 

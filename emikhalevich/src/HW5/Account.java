@@ -3,22 +3,32 @@ package HW5;
 import java.util.HashSet;
 import java.util.Objects;
 
-public class Account extends HashSet<Account> {
+public class Account {
     private int id;
 
-    public boolean equals(Object obj) {
-        Account account2 = (Account) obj;
-        return Objects.equals(this.id, account2.id);
-    }
 
-    public Account(Integer id) {
+    public Account(int id) {
         this.id = id;
     }
-    public Integer getID() {
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Account account = (Account) o;
+        return id == account.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
+
+    public int getId() {
         return id;
     }
-    // вывод описания действия
-    public String toString() {
-        return " Реквизит:" + id;
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
