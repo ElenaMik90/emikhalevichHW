@@ -6,7 +6,7 @@ public class GameTest1 {
         String scenario = "ТЕСТ: Передано имя игрока";
         try {
 
-
+            
 
             System.out.printf("\"%s\" passed %n", scenario);
         } catch (Exception e) {
