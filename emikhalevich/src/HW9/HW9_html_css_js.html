@@ -73,9 +73,7 @@
             var age = today.getFullYear() - studentDateBirthVal.getFullYear();
             var m = today.getMonth() - studentDateBirthVal.getMonth();
             if (m < 0 || (m === 0 && today.getDate() < studentDateBirthVal.getDate()))
-                {
-                age--;
-                }
+                { age--;}
             return age;
         }
 
